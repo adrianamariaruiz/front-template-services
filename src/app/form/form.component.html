@@ -1,0 +1,35 @@
+<article class="contact__form">
+  
+   <form [formGroup]="applyForm" (submit)="submitApplication()" class="form__content">
+    <h2 class="form__title">Iniciar sesión</h2>
+    
+    <div class="input__cont">
+      <label for="fullName" id="fullName" class="labelText">Nombre completo</label>
+      <input id="fullName" type="string" formControlName="fullName" placeholder="Escriba su nombre completo" class="input__form"/>
+    </div>
+    <p class="error__message" [hidden]="fullName.valid || fullName.pristine">Por favor escriba su nombre</p>
+    
+    <div class="input__cont">
+      <label for="email" id="email" class="labelText">Email</label>
+      <input id="email" type="email" formControlName="email" placeholder="Escriba su email" class="input__form"/>
+    </div>
+    <div [hidden]="email.valid || email.pristine" class="error__message">
+      @if ("email.errors?.['email']") {
+        <p>El email es invalido</p>
+      }
+    </div>
+    
+    <div class="input__cont">
+      <label for="password" id="password" class="labelText">Contraseña</label>
+      <input id="password" type="password" formControlName="password" placeholder="Escriba su contraseña" class="input__form"/>
+    </div>
+    <div [hidden]="password.valid || password.pristine" class="error__message">
+      @if ("password.errors?.['required']") {
+        <p>La contraseña es obligatorio</p>
+      }
+    </div>
+    
+    <button type="submit" [disabled]="applyForm.invalid" class="btn__primary">Iniciar sesión</button>
+  </form> 
+
+</article>

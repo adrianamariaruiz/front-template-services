@@ -1,1 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --yellow-green: #AEFC00;
+  --green-principal: #19EB00;
+  --disabled-green: #18eb008b;
+  --hot-red: oklch(61.42% 0.238 15.34);
+  --blue-dark: #111E3E;
+  --disabled-blue: #111e3e8c;
+
+  --shadow-red: box-shadow: 2px 2px 2px rgba(255, 0, 0, 0.432);
+  
+  --french-violet: oklch(47.66% 0.246 305.88);
+  --vivid-pink: oklch(69.02% 0.277 332.77);
+  --orange-red: oklch(63.32% 0.24 31.68);
+
+  --gray-900: oklch(19.37% 0.006 300.98);
+  --gray-700: oklch(36.98% 0.014 302.71);
+  --gray-400: oklch(70.9% 0.015 304.04);
+
+  --green-to-yellowgreen-horizontal-gradient: linear-gradient(
+    90deg,
+    var(--green-principal),
+    var(--yellow-green) 
+  );
+  --yellowgreen-to-green-horizontal-gradient: linear-gradient(
+    90deg,
+    var(--yellow-green),
+    var(--green-principal)
+  );
+  --disabled-yellowgreen-to-green-horizontal-gradient: linear-gradient(
+    90deg,
+    #acfc008c,
+    #18eb007e
+  );
+  --shadow-input: 2px 2px 2px #18eb008b;
+
+  /* --red-to-pink-to-purple-vertical-gradient: linear-gradient(
+    180deg,
+    var(--orange-red) 0%,
+    var(--vivid-pink) 50%,
+    var(--electric-violet) 100%
+  ); */
+
+  /* --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
+    90deg,
+    var(--orange-red) 0%,
+    var(--vivid-pink) 50%,
+    var(--electric-violet) 100%
+  ); */
+
+
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--blue-dark);
+  color: white;
+}

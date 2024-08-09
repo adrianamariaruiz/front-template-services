@@ -1,0 +1,30 @@
+<section class="tableTemplate__container">
+  <h1 class="principal__title">{{title}}</h1>
+
+  @if(templatesService$ | async; as templates){
+    <table>
+      <thead class="table__head">
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Descripcion</th>
+          <th>Solicitud</th>
+        </tr>
+      </thead>
+    
+      @for(template of templates; track template.id){
+        <tbody class="table__body">
+          <tr>
+            <td>{{template.id}}</td>
+            <td>{{template.nombre}}</td>
+            <td>{{template.descripcion}}</td>
+            <td>GET</td>
+          </tr>
+        </tbody>
+      }
+
+    </table>
+  }
+
+ 
+</section>

@@ -1,0 +1,29 @@
+.section__principal{
+  display: flex;
+  justify-content: center;
+
+  .navbar__container{
+    /* border: 1px solid green; */
+    width: 100%;
+    height: 40px;
+    padding: 10px 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    a{
+      text-decoration: none;
+      color: white;
+      
+      &:hover{
+        cursor: pointer;
+        color: var(--disabled-green);
+      }
+    }
+    
+
+    .active{
+      color: var(--green-principal);
+    }
+  }
+}
