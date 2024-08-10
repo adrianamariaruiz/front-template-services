@@ -13,4 +13,8 @@ export class ApiService {
   getAllTemplates(): Observable<any>{
     return this._http.get(`${environment.apiUrlBase}/plantillas`)
   }
+
+  getTemplateById(id: String): Observable<any>{
+    return this._http.get(`${environment.apiUrlBase}/plantilla/${id}`)
+  }
 }

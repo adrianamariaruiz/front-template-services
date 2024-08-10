@@ -1,1 +1,6 @@
-<p>details-template works!</p>
+@if(templateById$ | async; as template){
+  <h1>Detalles de la plantilla {{template.id}}</h1>
+  <p>ID: {{template.id}}</p>
+  <p>Nombre: {{template.nombre}}</p>
+  <p>Descripción: {{template.descripcion}}</p>
+}

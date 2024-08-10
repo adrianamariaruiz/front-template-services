@@ -12,13 +12,16 @@ export const routes: Routes = [
   {
     path: 'templates',
     component: TableTemplatesComponent,
-    title: 'templates',
-    children: [
-      {
-        path:'template-details/:id',
-        title: 'template-details',
-        component: DetailsTemplateComponent
-      }
-    ]
+    // children: [
+    //   {
+    //     path:'template-details/:id',
+    //     title: 'details',
+    //     component: DetailsTemplateComponent
+    //   }
+    // ]
+  },
+  {
+    path:'template-details/:id',
+    component: DetailsTemplateComponent
   }
 ];

@@ -9,6 +9,8 @@
   --disabled-blue: #111e3e8c;
 
   --shadow-red: box-shadow: 2px 2px 2px rgba(255, 0, 0, 0.432);
+  --shadow-input: 2px 2px 2px #18eb008b;
+  --shadow-navbar: 0px 2px 4px rgba(170, 170, 170, 0.952);
   
   --french-violet: oklch(47.66% 0.246 305.88);
   --vivid-pink: oklch(69.02% 0.277 332.77);
@@ -33,7 +35,7 @@
     #acfc008c,
     #18eb007e
   );
-  --shadow-input: 2px 2px 2px #18eb008b;
+  
 
   /* --red-to-pink-to-purple-vertical-gradient: linear-gradient(
     180deg,

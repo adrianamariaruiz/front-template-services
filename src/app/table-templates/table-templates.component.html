@@ -1,7 +1,7 @@
 <section class="tableTemplate__container">
   <h1 class="principal__title">{{title}}</h1>
 
-  @if(templatesService$ | async; as templates){
+  @if(templateAllServices$ | async; as templates){
     <table>
       <thead class="table__head">
         <tr>
@@ -15,7 +15,11 @@
       @for(template of templates; track template.id){
         <tbody class="table__body">
           <tr>
-            <td>{{template.id}}</td>
+            <td>
+              <a [routerLink]="['/template-details', template.id]">
+                {{template.id}}
+              </a>
+            </td>
             <td>{{template.nombre}}</td>
             <td>{{template.descripcion}}</td>
             <td>GET</td>

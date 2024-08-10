@@ -30,6 +30,16 @@
     tbody{
       border: 2px solid white;
 
+      a{
+        text-decoration: none;
+        color: white;
+        
+        &:hover{
+          cursor: pointer;
+          color: var(--disabled-green);
+        }
+      }
+
       td {
         padding: 20px;
         text-align: left;
