@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ApiService } from '../api.service';
+import { ApiService } from '../services/api.service';
 import { AsyncPipe } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 

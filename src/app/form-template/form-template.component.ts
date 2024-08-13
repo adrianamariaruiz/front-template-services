@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ApiService } from '../api.service';
-import { DataTemplate } from '../model/api.model';
+import { ApiService } from '../services/api.service';
+import { DataTemplate } from '../model/DataTemplate.model';
 
 @Component({
   selector: 'app-form-template',

@@ -1,5 +1,5 @@
 import { Component, inject, Input } from '@angular/core';
-import { ApiService } from '../api.service';
+import { ApiService } from '../services/api.service';
 import { AsyncPipe, JsonPipe } from '@angular/common';
 import { firstValueFrom, switchMap } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
