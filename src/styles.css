@@ -5,6 +5,7 @@
   --green-principal: #19EB00;
   --disabled-green: #18eb008b;
   --hot-red: oklch(61.42% 0.238 15.34);
+  --delete-red: rgba(255, 60, 60, 0.884);
   --blue-dark: #111E3E;
   --disabled-blue: #111e3e8c;
 
@@ -60,4 +61,35 @@
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--blue-dark);
   color: white;
+}
+
+.btn{
+  border-style: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+.btn__primary{
+  background: var(--yellowgreen-to-green-horizontal-gradient);
+  transition: all 0.3s ease;
+  margin: 20px auto;
+  height: 45px;
+  width: 100%;
+  max-width: 300px;
+  font-size: 1.2rem;
+
+  &:hover{
+    background: var(--green-to-yellowgreen-horizontal-gradient);
+  }
+
+  &:disabled{
+    background: var(--disabled-yellowgreen-to-green-horizontal-gradient);
+    color: var(--disabled-blue);
+    &:hover{
+      background-color: transparent;
+      cursor: auto;
+    }
+  }
 }

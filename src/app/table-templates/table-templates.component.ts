@@ -1,7 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { ApiService } from '../api.service';
 import { AsyncPipe } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-table-templates',
@@ -13,9 +14,15 @@ import { RouterLink } from '@angular/router';
 export class TableTemplatesComponent {
   // @Input('id') templateId!: String;
 
+  constructor(private router: Router) {}
+
   title = 'Plantillas de servicio';
   templateSvc = inject(ApiService)
+
   templateAllServices$ = this.templateSvc.getAllTemplates()
-  // templateById$ = this.templateSvc.getTemplateById('id')
+
+  goToForm(){
+    this.router.navigate(['/form-template']);
+  }
 
 }

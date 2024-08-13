@@ -1,0 +1,22 @@
+<article class="contact__form">
+  
+  <form [formGroup]="applyFormTemplate" (submit)="submitFormData()" class="form__content">
+   <h2 class="form__title">Guardar nueva plantilla</h2>
+   
+   <div class="input__cont">
+     <label for="fullName" id="fullName" class="labelText">Nombre completo</label>
+     <input id="fullName" type="string" formControlName="nombre" placeholder="Escriba su nombre completo" class="input__form"/>
+   </div>
+   <p class="error__message" [hidden]="fullName.valid || fullName.pristine">Por favor escriba su nombre</p>
+   
+   <div class="input__cont">
+     <label for="description" id="description" class="labelText">Descripción</label>
+     <input id="description" type="text" formControlName="descripcion" placeholder="Escriba la descripción" class="input__form"/>
+   </div>
+   <p class="error__message" [hidden]="description.valid || description.pristine">Debe llenar este campo</p>
+
+   <button type="submit" [disabled]="applyFormTemplate.invalid" class="btn btn__primary">Guardar</button>
+ </form> 
+
+</article>
+

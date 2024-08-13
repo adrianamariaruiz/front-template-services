@@ -1,32 +1,3 @@
-/* 
-.btn__primary{
-  border-style: none;
-  background: var(--yellowgreen-to-green-horizontal-gradient);
-  transition: all 0.3s ease;
-  padding: 5px 10px;
-  border-radius: 8px;
-  margin: 20px auto;
-  height: 45px;
-  width: 100%;
-  max-width: 300px;
-  font-weight: bold;
-  font-size: 1.2rem;
-  cursor: pointer;
-
-  &:hover{
-    background: var(--green-to-yellowgreen-horizontal-gradient);
-  }
-
-  &:disabled{
-    background: var(--disabled-yellowgreen-to-green-horizontal-gradient);
-    color: var(--disabled-blue);
-    &:hover{
-      background-color: transparent;
-      cursor: auto;
-    }
-  }
-} */
-
 .article__form{
   /* border: 1px solid red; */
   margin-top: 50px;
@@ -99,9 +70,3 @@
     }
   }
 }
-/* 
-@media (width >= 768px){
-  .input__cont{
-    width: 80%;
-  }
-} */

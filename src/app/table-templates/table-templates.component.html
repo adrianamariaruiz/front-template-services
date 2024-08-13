@@ -9,6 +9,7 @@
           <th>Nombre</th>
           <th>Descripcion</th>
           <th>Solicitud</th>
+          <th>Acciones</th>
         </tr>
       </thead>
     
@@ -23,12 +24,17 @@
             <td>{{template.nombre}}</td>
             <td>{{template.descripcion}}</td>
             <td>GET</td>
+            <td>
+              <button class="btn btn__delete">Eliminar</button>
+              <button class="btn btn__edit">Editar</button>
+            </td>
           </tr>
         </tbody>
       }
 
     </table>
   }
+  <button class="btn btn__primary" (click)="goToForm()">Agregar</button>
 
  
 </section>

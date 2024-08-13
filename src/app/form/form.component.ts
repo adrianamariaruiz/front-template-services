@@ -39,6 +39,7 @@ export class FormComponent {
   submitApplication(){
     if(this.applyForm.valid){
       console.log(this.applyForm.value)
+      this.applyForm.reset();
     } else {
       console.log("Formulario incorrecto")
     }

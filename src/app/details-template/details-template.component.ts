@@ -1,18 +1,18 @@
 import { Component, inject, Input } from '@angular/core';
 import { ApiService } from '../api.service';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, JsonPipe } from '@angular/common';
 import { firstValueFrom, switchMap } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-details-template',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, JsonPipe],
   templateUrl: './details-template.component.html',
   styleUrl: './details-template.component.css'
 })
 export class DetailsTemplateComponent {
-  // @Input() id!: String;
+
 
   templateSvc = inject(ApiService)
   route = inject(ActivatedRoute)

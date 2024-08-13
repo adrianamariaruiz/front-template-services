@@ -55,6 +55,17 @@
           background-color: #0b1327;
       }
     }
+
+    .btn__delete{
+      background-color: var(--delete-red);
+      color: white;
+      margin: 2px 5px;
+    }
+    .btn__edit{
+      background-color: var(--disabled-green);
+      color: white;
+      margin: 2px 5px;
+    }
     
   }
 
