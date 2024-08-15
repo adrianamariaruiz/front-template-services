@@ -4,10 +4,10 @@
    <h2 class="form__title">Guardar nueva plantilla</h2>
    
    <div class="input__cont">
-     <label for="fullName" id="fullName" class="labelText">Nombre completo</label>
-     <input id="fullName" type="string" formControlName="nombre" placeholder="Escriba su nombre completo" class="input__form"/>
+     <label for="fullName" id="fullName" class="labelText">Nombre</label>
+     <input id="fullName" type="string" formControlName="nombre" placeholder="Escriba el nombre" class="input__form"/>
    </div>
-   <p class="error__message" [hidden]="fullName.valid || fullName.pristine">Por favor escriba su nombre</p>
+   <p class="error__message" [hidden]="fullName.valid || fullName.pristine">Por favor escriba el nombre</p>
    
    <div class="input__cont">
      <label for="description" id="description" class="labelText">Descripción</label>
@@ -15,8 +15,39 @@
    </div>
    <p class="error__message" [hidden]="description.valid || description.pristine">Debe llenar este campo</p>
 
+   <div class="input__cont">
+     <label for="choseDate" id="choseDate" class="labelText">Fecha</label>
+     <input id="choseDate" type="date" formControlName="fecha" class="input__form"/>
+   </div>
+   <p class="error__message" [hidden]="choseDate.valid || choseDate.pristine">Debe escoger una fecha</p>
+
+   <div class="input__cont">
+     <label for="author" id="author" class="labelText" >Autor</label>
+     <input id="author" type="text" formControlName="autor" class="input__form" placeholder="Escriba su nombre"/>
+   </div>
+   <p class="error__message" [hidden]="author.valid || author.pristine">Debe escribir el nombre</p>
+   
+   <div class="input__cont">
+     <label for="category" id="category" class="labelText">Categoría</label>
+     <select id="category" type="text" formControlName="categoria" class="input__form">
+      @for (category of categoria; track $index) {
+        <option [value]="category">{{category}}</option>
+      }
+     </select>
+   </div>
+   <p class="error__message" [hidden]="category.valid || category.pristine">Debe escoger una categoría</p>
+
+   <div class="input__cont">
+     <label for="target" id="target" class="labelText">Etiqueta</label>
+     <select id="target" type="text" formControlName="etiquetas" class="input__form">
+      @for (target of etiquetas; track $index) {
+        <option [value]="target">{{target}}</option>
+      }
+     </select>
+   </div>
+   <p class="error__message" [hidden]="category.valid || category.pristine">Debe escribir el nombre</p>
+
    <button type="submit" [disabled]="applyFormTemplate.invalid" class="btn btn__primary">Guardar</button>
  </form> 
 
 </article>
-

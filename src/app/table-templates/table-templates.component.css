@@ -60,11 +60,20 @@
       background-color: var(--delete-red);
       color: white;
       margin: 2px 5px;
+      
+      &:hover{
+        background-color: var(--hot-red);
+      }
     }
+
     .btn__edit{
       background-color: var(--disabled-green);
       color: white;
       margin: 2px 5px;
+
+      &:hover{
+        background-color: var(--green-principal);
+      }
     }
     
   }

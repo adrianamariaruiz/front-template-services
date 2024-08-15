@@ -22,4 +22,12 @@ export class ApiService {
   saveTemplate(templateData: DataTemplate): Observable<string>{
     return this._http.post(`${environment.apiUrlBase}/plantilla/save`, templateData, { responseType: 'text' })
   }
+
+  deleteTemplate(id: string): Observable<string>{
+    return this._http.delete(`${environment.apiUrlBase}/plantilla/${id}`, { responseType: 'text' })
+  }
+
+  updateTemplate(id: string): Observable<DataTemplate>{
+    return this._http.put<DataTemplate>(`${environment.apiUrlBase}/plantilla/${id}`, { responseType: 'text' })
+  }
 }

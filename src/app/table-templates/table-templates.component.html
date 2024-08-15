@@ -6,9 +6,15 @@
       <thead class="table__head">
         <tr>
           <th>ID</th>
+          <th>Fecha</th>
           <th>Nombre</th>
           <th>Descripcion</th>
-          <th>Solicitud</th>
+          <!-- <th>Autor</th>
+          <th>Version</th>
+          <th>Fecha de actualización</th>
+          <th>Categoria</th>
+          <th>Estado</th>
+          <th>Etiqueta</th> -->
           <th>Acciones</th>
         </tr>
       </thead>
@@ -21,12 +27,18 @@
                 {{template.id}}
               </a>
             </td>
+            <td>{{template.fecha | date:'medium'}}</td>
             <td>{{template.nombre}}</td>
             <td>{{template.descripcion}}</td>
-            <td>GET</td>
+            <!-- <td>{{template.autor}}</td>
+            <td>{{template.version}}</td>
+            <td>{{template.fechaActualizacion | date:'medium'}}</td>
+            <td>{{template.categoria}}</td>
+            <td>{{template.activo}}</td>
+            <td>{{template.etiquetas}}</td> -->
             <td>
-              <button class="btn btn__delete">Eliminar</button>
-              <button class="btn btn__edit">Editar</button>
+              <button class="btn btn__delete" (click)="onDeleteTemplate(template.id!)">Eliminar</button>
+              <button class="btn btn__edit" (click)="onUpdateTemplate(template.id!)">Editar</button>
             </td>
           </tr>
         </tbody>
