@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { FormComponent } from './form/form.component';
+import { EditFormComponent } from './EditForm/EditForm.component';
 
 @Component({
   selector: 'app-root',

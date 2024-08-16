@@ -27,7 +27,7 @@ export class ApiService {
     return this._http.delete(`${environment.apiUrlBase}/plantilla/${id}`, { responseType: 'text' })
   }
 
-  updateTemplate(id: string): Observable<DataTemplate>{
-    return this._http.put<DataTemplate>(`${environment.apiUrlBase}/plantilla/${id}`, { responseType: 'text' })
+  updateTemplate(id: string, templateData: DataTemplate): Observable<DataTemplate>{
+    return this._http.put<DataTemplate>(`${environment.apiUrlBase}/plantilla/${id}`, templateData)
   }
 }

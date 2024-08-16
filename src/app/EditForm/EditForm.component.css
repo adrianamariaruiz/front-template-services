@@ -89,6 +89,10 @@
           border: 2px solid var(--green-principal);
           box-shadow: var(--shadow-input);
         }
+
+        option{
+          background-color: var(--blue-dark);
+        }
       }
     }
     .error__message{

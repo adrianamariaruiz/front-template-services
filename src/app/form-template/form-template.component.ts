@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
 import { CategoriaEnum, DataTemplate, EtiquetaEnum } from '../model/DataTemplate.model';
@@ -11,21 +11,20 @@ import Swal from 'sweetalert2';
   templateUrl: './form-template.component.html',
   styleUrl: './form-template.component.css'
 })
-export class FormTemplateComponent {
-  constructor (private fb: FormBuilder){}
+export class FormTemplateComponent  {
 
+  private readonly _fb = inject(FormBuilder)
   templateSvc = inject(ApiService)
 
   etiquetas = Object.values(EtiquetaEnum);
   categoria = Object.values(CategoriaEnum);
 
-  applyFormTemplate = this.fb.group({
+  applyFormTemplate = this._fb.group({
     nombre: ['', [Validators.required, Validators.minLength(5)]],
     fecha: ['', [Validators.required]],
     descripcion: ['', [Validators.required]],
     autor: ['', [Validators.required]],
     categoria: [CategoriaEnum.TIPO_1, [Validators.required]],
-    activo: ['activo', [Validators.required]],
     etiquetas: [EtiquetaEnum.PENDIENTE, [Validators.required]]
   })
 

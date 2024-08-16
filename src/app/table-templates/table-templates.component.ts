@@ -68,7 +68,7 @@ export class TableTemplatesComponent {
 
   onUpdateTemplate(id: string){
     console.log("debe abrir modal", id)
-    // this.templateSvc.updateTemplate(id)
+    this.router.navigate([`edit-template/${id}`]);
   }
 
 }
