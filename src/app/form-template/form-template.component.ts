@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
-import { CategoriaEnum, DataTemplate, EtiquetaEnum } from '../model/DataTemplate.model';
+import { CategoriaEnum, DataTemplate, EstadoEnum, EtiquetaEnum } from '../model/DataTemplate.model';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -18,12 +18,14 @@ export class FormTemplateComponent  {
 
   etiquetas = Object.values(EtiquetaEnum);
   categoria = Object.values(CategoriaEnum);
+  estadosActividad = Object.values(EstadoEnum);
 
   applyFormTemplate = this._fb.group({
     nombre: ['', [Validators.required, Validators.minLength(5)]],
     fecha: ['', [Validators.required]],
     descripcion: ['', [Validators.required]],
     autor: ['', [Validators.required]],
+    activo: [EstadoEnum.ACTIVO, [Validators.required]],
     categoria: [CategoriaEnum.TIPO_1, [Validators.required]],
     etiquetas: [EtiquetaEnum.PENDIENTE, [Validators.required]]
   })
@@ -46,16 +48,21 @@ export class FormTemplateComponent  {
   get target(){
     return this.applyFormTemplate.get('etiquetas') as FormControl;
   }
+  get activeState(){
+    return this.applyFormTemplate.get('activo') as FormControl;
+  }
 
   submitFormData(){
     if(this.applyFormTemplate.valid){
       console.log(this.applyFormTemplate.value)
+      console.log(new Date(this.applyFormTemplate.value.fecha!))
       
       const formData: DataTemplate = {
         nombre: this.applyFormTemplate.value.nombre ?? "",
         fecha: new Date(this.applyFormTemplate.value.fecha!),
         descripcion: this.applyFormTemplate.value.descripcion ?? "",
         autor: this.applyFormTemplate.value.autor ?? "",
+        activo: this.applyFormTemplate.value.activo ?? EstadoEnum.ACTIVO,
         categoria: this.applyFormTemplate.value.categoria ?? CategoriaEnum.TIPO_1,
         etiquetas: this.applyFormTemplate.value.etiquetas ?? EtiquetaEnum.PENDIENTE
       };

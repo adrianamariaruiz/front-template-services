@@ -1,6 +1,56 @@
+<section class="detail__container">
 @if(templateById$ | async; as template){
-  <h1>Detalles de la plantilla {{template.id}}</h1>
-  <p>ID: {{template.id}}</p>
-  <p>Nombre: {{template.nombre}}</p>
-  <p>Descripción: {{template.descripcion}}</p>
-}
+    <h1>Detalles de la plantilla</h1>
+    <div class="grid__container">
+      <div class="grid__item">
+        <p>ID</p>
+        <p>{{template.id}}</p>
+      </div>
+
+      <div class="grid__item">
+        <p>Fecha: </p>
+        <p>{{template.fecha | date:'shortDate': 'UTC'}}</p>
+      </div>
+
+      <div class="grid__item">
+        <p>Autor: </p>
+        <p>{{template.autor}}</p>
+      </div>
+
+      <div class="grid__item">
+        <p>Nombre: </p>
+        <p>{{template.nombre}}</p>
+      </div>
+
+      <div class="grid__item">
+        <p>Descripción: </p>
+        <p>{{template.descripcion}}</p>
+      </div>
+
+      <div class="grid__item">
+        <p>Fecha de ultima actualización: </p>
+        <p>{{template.fechaActualizacion | date:'shortDate': 'UTC'}}</p>
+      </div>
+
+      <div class="grid__item">
+        <p>Estado: </p>
+        <p>{{template.activo}}</p>
+      </div>
+
+      <div class="grid__item">
+        <p>Version: </p>
+        <p>{{template.version}}</p>
+      </div>
+
+      <div class="grid__item">
+        <p>Categoría: </p>
+        <p>{{template.categoria}}</p>
+      </div>
+
+      <div class="grid__item">
+        <p>Etiqueta: </p>
+        <p>{{template.etiquetas}}</p>
+      </div>
+    </div>
+  }
+</section>

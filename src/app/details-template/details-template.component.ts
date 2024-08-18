@@ -1,13 +1,13 @@
 import { Component, inject, Input } from '@angular/core';
 import { ApiService } from '../services/api.service';
-import { AsyncPipe, JsonPipe } from '@angular/common';
+import { AsyncPipe, DatePipe, JsonPipe } from '@angular/common';
 import { firstValueFrom, switchMap } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-details-template',
   standalone: true,
-  imports: [AsyncPipe, JsonPipe],
+  imports: [AsyncPipe, JsonPipe, DatePipe],
   templateUrl: './details-template.component.html',
   styleUrl: './details-template.component.css'
 })

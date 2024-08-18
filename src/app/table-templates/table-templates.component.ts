@@ -15,12 +15,11 @@ import Swal from 'sweetalert2';
   styleUrl: './table-templates.component.css'
 })
 export class TableTemplatesComponent {
-  // @Input('id') templateId!: String;
-
-  constructor(private router: Router) {}
 
   title = 'Plantillas de servicio';
   templateAllServices$!: Observable<DataTemplate[]>
+
+  private readonly router = inject(Router)
   private readonly templateSvc = inject(ApiService)
 
   ngOnInit(){

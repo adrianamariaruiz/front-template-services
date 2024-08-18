@@ -26,6 +26,16 @@
      <input id="author" type="text" formControlName="autor" class="input__form" placeholder="Escriba su nombre"/>
    </div>
    <p class="error__message" [hidden]="author.valid || author.pristine">Debe escribir el nombre</p>
+
+   <div class="input__cont">
+    <label for="activeState" id="activeState" class="labelText">Estado</label>
+    <select id="activeState" type="text" formControlName="activo" class="input__form">
+     @for (estado of estadosActividad; track $index) {
+       <option [value]="estado">{{estado}}</option>
+     }
+    </select>
+  </div>
+  <p class="error__message" [hidden]="activeState.valid || activeState.pristine">Debe escoger un estado</p>
    
    <div class="input__cont">
      <label for="category" id="category" class="labelText">Categoría</label>

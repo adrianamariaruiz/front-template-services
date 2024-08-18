@@ -12,8 +12,8 @@ export enum EtiquetaEnum {
 }
 
 export enum CategoriaEnum {
-  TIPO_1 = 'tipo1',
-  TIPO_2 = 'tipo2'
+  TIPO_1 = 'TIPO1',
+  TIPO_2 = 'TIPO2'
 }
 
 export interface DataTemplate{

@@ -5,6 +5,7 @@ import { ApiService } from '../services/api.service';
 import { CategoriaEnum, EstadoEnum, EtiquetaEnum } from '../model/DataTemplate.model';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-form',
@@ -68,19 +69,36 @@ export class EditFormComponent implements OnInit{
     if(this.editForm.valid){
       const id = this.route.snapshot.paramMap.get('id')!;
       const updatedTemplate = this.editForm.value;
-      updatedTemplate.fecha = new Date(updatedTemplate.fecha);
-      
+      updatedTemplate.fechaActualizacion = new Date();
+
       this.templateSvc.updateTemplate(id, updatedTemplate).subscribe({
         next: (response)=> {
           console.log('actualizada', response)
+          Swal.fire({
+            title: "Plantilla editada con exito!",
+            showClass: {
+              popup: 'swal2-show',
+              backdrop: 'swal2-backdrop-show',
+            },
+            hideClass: {
+              popup: 'swal2-hide',
+              backdrop: 'swal2-backdrop-hide',
+            },
+          });
           this.editForm.reset();
         },
         error: (err)=>{
           console.log('error', err)
         }
-      })
+      }
+    )
     } else {
       console.log("Formulario incorrecto")
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Algo salió mal y no se pudo editar la plantilla!"
+      });
     }
   }
 }
