@@ -1,0 +1,33 @@
+.detail__container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding: 20px 0px;
+
+  h1{
+    color: var(--green-principal);
+  }
+
+  .grid__container{
+    height: 100%;
+    
+    .grid__item{
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      height: 60px;
+
+      p{
+        border: 1px solid white;
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+
+        &:nth-child(1){
+          font-weight: bold;
+        }
+
+      }
+    }
+  }
+}

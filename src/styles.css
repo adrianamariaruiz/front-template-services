@@ -69,6 +69,9 @@
   cursor: pointer;
   font-weight: bold;
   padding: 5px 10px;
+  min-width: 100px;
+  min-height: 35px;
+  font-size: 1rem;
 }
 
 .btn__primary{
@@ -76,6 +79,7 @@
   transition: all 0.3s ease;
   margin: 20px auto;
   height: 45px;
+  min-width: 100px;
   width: 100%;
   max-width: 300px;
   font-size: 1.2rem;

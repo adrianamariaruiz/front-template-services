@@ -1,34 +1,18 @@
 import { Routes } from '@angular/router';
-import { TableTemplatesComponent } from './table-templates/table-templates.component';
-import { FormComponent } from './form/form.component';
-import { DetailsTemplateComponent } from './details-template/details-template.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { FormTemplateComponent } from './form-template/form-template.component';
 
 export const routes: Routes = [
   {
     path:'',
-    component: FormComponent,
-    title: 'Home'
+    loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
   },
   {
     path: 'templates',
-    component: TableTemplatesComponent,
-    // children: [
-    //   {
-    //     path:'template-details/:id',
-    //     title: 'details',
-    //     component: DetailsTemplateComponent
-    //   }
-    // ]
+    loadChildren: () => import('./modules/templates/templates.module').then(m => m.TemplatesModule)
   },
   {
-    path:'template-details/:id',
-    component: DetailsTemplateComponent
-  },
-  {
-    path:'form-template',
-    component: FormTemplateComponent
+    path: 'auth',
+    loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
   },
   {
     path: '**',

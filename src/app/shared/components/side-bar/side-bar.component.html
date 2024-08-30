@@ -1,0 +1,7 @@
+<main class="sidebar__main">
+  <nav class="sidebar__container">
+    @for(item of menuItems; track item.id){
+      <a routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}" [routerLink]="item.link">{{item.name}}</a>
+    }
+  </nav>
+</main>

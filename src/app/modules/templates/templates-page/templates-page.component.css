@@ -1,0 +1,140 @@
+.tableTemplate__container{
+  margin-left: 150px;
+  padding: 20px;
+  height: 100vh;
+
+  
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+
+  .search__container{
+    /* border: 1px solid red; */
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .input__cont{
+      /* border: 1px solid yellow; */
+      width: 100%;
+      padding: 0px 5px;
+
+      .input__form{
+        width: 90%;
+        max-width: 400px;
+        height: 40px;
+        margin: 0px 3px;
+        color: white;
+        border-radius:5px;
+        background-color: transparent;
+        border: 2px solid var(--green-principal);
+        outline: none;
+
+        &::placeholder{
+          color: var(--gray-400);
+          font-size: 16px;
+          padding: 0px 5px;
+        }
+
+        &:focus{
+          background-color: transparent;
+          border: 2px solid var(--green-principal);
+          box-shadow: var(--shadow-input);
+        }
+      }
+
+      .btn__search{
+        width: 100px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  h1{
+    color: var(--green-principal);
+  }
+
+  .table__container{
+    width: 100%;
+    
+    table {
+      overflow-x: auto;
+      color: white;
+      font-weight: bold;
+      height: 80px;
+      max-width: 1440px;
+      margin: 20px 0;
+      
+      border-collapse: collapse;
+    
+      thead {
+        border: 2px solid white;
+        background-color: #0b1327;
+        color: var(--green-principal);
+          
+      }
+  
+      th {
+        text-align: center;
+        padding: 20px;
+      }
+      
+      tbody{
+        border: 2px solid white;
+  
+        a{
+          text-decoration: none;
+          color: white;
+          
+          &:hover{
+            cursor: pointer;
+            color: var(--disabled-green);
+          }
+        }
+  
+        td {
+          padding: 20px;
+          text-align: left;
+          border: 2px solid white;
+          
+        }
+  
+        tr:nth-child(odd) {
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #0b1327;
+        }
+      }
+  
+      .btn__delete{
+        background-color: var(--delete-red);
+        color: white;
+        margin: 2px 5px;
+        
+        &:hover{
+          background-color: var(--hot-red);
+        }
+      }
+  
+      .btn__edit{
+        background-color: var(--disabled-green);
+        color: white;
+        margin: 2px 5px;
+  
+        &:hover{
+          background-color: var(--green-principal);
+        }
+      }
+      
+    }
+  
+  }
+
+  
+
+}
+
