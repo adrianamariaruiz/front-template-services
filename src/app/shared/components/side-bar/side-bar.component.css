@@ -1,0 +1,33 @@
+.sidebar__main{
+  position: absolute;
+  width: 150px;
+
+  .sidebar__container{
+    /* border: 1px solid green; */
+    min-height: 100vh;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: var(--shadow-navbar);
+
+    a{
+      text-decoration: none;
+      color: white;
+      
+      &:hover{
+        cursor: pointer;
+        color: var(--disabled-green);
+      }
+    }
+    
+
+    .active{
+      color: var(--green-principal);
+
+      &:hover{
+        color: var(--green-principal);
+      }
+    }
+  }
+}

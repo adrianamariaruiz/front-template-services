@@ -1,0 +1,62 @@
+<section class="tableTemplate__container">
+
+  <div class="search__container">
+    <form action="" class="input__cont">
+      <input type="text" class="input__form" placeholder="filtrar" #filter (input)="resultFilter(filter.value)">
+      <button type="button" class="btn btn__primary btn__search" (click)="resultFilter(filter.value)">Buscar</button>
+    </form>
+  </div>
+
+  <h1 class="principal__title">{{title}}</h1>
+
+  <div class="table__container">
+  
+  @if(templates){
+    <table>
+      <thead class="table__head">
+        <tr>
+          <th>ID</th>
+          <th>Fecha</th>
+          <th>Nombre</th>
+          <th>Descripcion</th>
+          <th>Autor</th>
+          <th>Version</th>
+          <th>Fecha de actualización</th>
+          <th>Categoria</th>
+          <th>Estado</th>
+          <th>Etiqueta</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+    
+      @for(template of filteredTemplates; track template.id){
+        <tbody class="table__body">
+          <tr>
+            <td>
+              <a [routerLink]="['/templates/template-details', template.id]">
+                {{template.id}}
+              </a>
+            </td>
+            <td>{{template.fecha | date:'shortDate': 'UTC'}}</td>
+            <td>{{template.nombre}}</td>
+            <td>{{template.descripcion}}</td>
+            <td>{{template.autor}}</td>
+            <td>{{template.version}}</td>
+            <td>{{template.fechaActualizacion | date:'medium'}}</td>
+            <td>{{template.categoria}}</td>
+            <td>{{template.activo}}</td>
+            <td>{{template.etiquetas}}</td>
+            <td>
+              <button class="btn btn__delete" (click)="onDeleteTemplate(template.id!)">Eliminar</button>
+              <button class="btn btn__edit" (click)="onUpdateTemplate(template.id!)">Editar</button>
+            </td>
+          </tr>
+        </tbody>
+      }
+
+    </table>
+  }
+  <button class="btn btn__primary" (click)="goToForm()">Agregar</button>
+</div>
+ 
+</section>
